@@ -10,15 +10,20 @@
 
     <!-- 灰色格子 -->
     <div class="grid coverBox"></div>
+    <div class="grid-double coverBox"></div>
 
     <!-- 绿色 -->
     <div class="line-rotate coverBox"></div>
     <div class="line-rotate-left coverBox"></div>
     <div class="line-rotate-left-right coverBox"></div>
+    <div class="xiaomai coverBox"></div>
 
     <!-- 圆 -->
     <div class="circle coverBox"></div>
     <div class="pointReact coverBox"></div>
+
+    <!-- 砖墙 -->
+    <div class="reactBox coverBox"></div>
 
     <!-- 奇奇怪怪的不知名形状 -->
     <div class="hahaha coverBox"></div>
@@ -54,6 +59,9 @@
 
 /* 田字格 */
 .tianBox {
+  width: 122px;
+  height: 122px;
+  margin-right: 58px;
   background-image: linear-gradient(90deg, #aaa 2px, transparent 0),
     linear-gradient(#aaa 2px, transparent 0),
     linear-gradient(90deg, #efefef 1px, transparent 1px),
@@ -87,23 +95,24 @@
 
 /* 格子 */
 .grid {
-  background: linear-gradient(
-      45deg,
-      #efefef 25%,
-      transparent 0,
-      transparent 75%,
-      #efefef 0
-    ),
-    linear-gradient(
-      45deg,
-      #efefef 25%,
-      transparent 0,
-      transparent 75%,
-      #efefef 0
-    );
+  background-image: linear-gradient(135deg, #515151 25%, transparent 0),
+    linear-gradient(-45deg, #515151 25%, transparent 0),
+    linear-gradient(135deg, #515151 25%, transparent 0),
+    linear-gradient(-45deg, #515151 25%, transparent 0);
+  background-size: 64px 64px;
+  background-position: 0 0, -33px -32px, 32px 32px, -1px 0px;
   background-repeat: repeat;
-  background-position: 0 0, 30px 30px;
-  background-size: 60px 60px;
+}
+
+/* 双色拼格子 */
+.grid-double {
+  background-image: linear-gradient(135deg, #515151 25%, transparent 0),
+    linear-gradient(-45deg, #515151 25%, transparent 0),
+    linear-gradient(135deg, #999 25%, transparent 0),
+    linear-gradient(-45deg, #999 25%, transparent 0);
+  background-size: 64px 64px;
+  background-position: 0 0, -33px -32px, 32px 32px, -1px 0px;
+  background-repeat: repeat;
 }
 
 /* 绿色右侧斜条纹 */
@@ -160,7 +169,7 @@
 }
 
 /* 小麦的形状 */
-.line-rotate-left-right {
+.xiaomai {
   background: linear-gradient(135deg, #fbbd08 25%, transparent 0),
     linear-gradient(45deg, #fbbd08 25%, transparent 0),
     linear-gradient(-135deg, #fbbd08 25%, transparent 0),
@@ -229,4 +238,17 @@
   background-size: 22px 22px;
   background-repeat: repeat;
 }
+
+/* 实心砖墙 */
+.reactBox {
+  background-image: linear-gradient(155deg, #515151 25%, transparent 0),
+    linear-gradient(-25deg, #515151 25%, transparent 0),
+    linear-gradient(155deg, #515151 25%, transparent 0),
+    linear-gradient(-25deg, #515151 25%, transparent 0);
+  background-size: 64px 32px;
+  background-position: 0 0, -32px -16px, 32px 16px, 0px 0px;
+  background-repeat: repeat;
+}
+
+/* 线条砖墙 */
 </style>
