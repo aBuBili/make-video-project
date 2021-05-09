@@ -28,8 +28,10 @@ const styleList = [
   "line-rotate-left",
   "line-rotate-left-right",
   "xiaomai",
+  "bianzi",
   "circle",
-  "pointReact",
+  "point",
+  "hollowCircle",
   // 砖墙
   "reactBox",
   // 不知名形状
@@ -39,7 +41,7 @@ const styleList = [
   "hahaha4",
 ];
 
-let showStyleName = ref("grid");
+let showStyleName = ref("gray");
 
 function setShowBoxClass({ target }) {
   const { id } = target;
@@ -76,10 +78,6 @@ function setShowBoxClass({ target }) {
   width: 40rem;
   height: 30rem;
   border: 1px solid #eee;
-  background-image: linear-gradient(90deg, #eee 1px, transparent 0),
-    linear-gradient(#efefef 1px, transparent 0);
-  background-size: 30px 30px;
-  background-repeat: repeat;
 }
 
 /* 灰色网格 */
@@ -209,6 +207,15 @@ function setShowBoxClass({ target }) {
   background-repeat: repeat;
 }
 
+/* 辫子网格 */
+.bianzi {
+  background: linear-gradient(-45deg, #fbbd08 25%, transparent 0),
+    linear-gradient(45deg, #fbbd08 25%, transparent 0);
+  background-position: 0px 0px, 20px 0px;
+  background-size: 40px 20px;
+  background-repeat: repeat;
+}
+
 /* 不知名 = - = */
 .hahaha {
   background: linear-gradient(135deg, #fbbd08 25%, transparent 0),
@@ -263,9 +270,26 @@ function setShowBoxClass({ target }) {
 }
 
 /* 点阵 */
-.pointReact {
+.point {
   background-image: radial-gradient(#000 1px, transparent 0);
   background-size: 22px 22px;
+  background-repeat: repeat;
+}
+
+/* 空心圆 */
+.hollowCircle {
+  --pink: #1cbbb381;
+  background-image: radial-gradient(
+    transparent 20%,
+    var(--pink) 20%,
+    var(--pink) 40%,
+    transparent 40%,
+    transparent 60%,
+    var(--pink) 60%,
+    var(--pink) 80%,
+    transparent 80%
+  );
+  background-size: 50px 50px;
   background-repeat: repeat;
 }
 
