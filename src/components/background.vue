@@ -4,13 +4,14 @@
       <div v-for="(e, k) of styleList" :key="k" :class="e" :id="e"></div>
     </div>
     <div>
-      <div class="showBox"></div>
-      <code></code>
+      <div class="showBox" :class="showStyleName"></div>
     </div>
   </div>
 </template>
 
 <script setup>
+import { ref } from "@vue/reactivity";
+
 const styleList = [
   // 浅灰色
   "gray",
@@ -37,8 +38,15 @@ const styleList = [
   "hahaha3",
   "hahaha4",
 ];
-function setShowBoxClass(e) {
-  console.log(e.target);
+
+let showStyleName = ref("grid");
+
+function setShowBoxClass({ target }) {
+  const { id } = target;
+  if (id) {
+    showStyleName.value = id;
+    console.log(id);
+  }
 }
 </script>
 
