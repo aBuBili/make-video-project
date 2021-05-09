@@ -3,9 +3,7 @@
     <div class="left" @mouseover="setShowBoxClass">
       <div v-for="(e, k) of styleList" :key="k" :class="e" :id="e"></div>
     </div>
-    <div>
-      <div class="showBox" :class="showStyleName"></div>
-    </div>
+    <div class="showBox" :class="showStyleName"></div>
   </div>
 </template>
 
@@ -54,29 +52,29 @@ function setShowBoxClass({ target }) {
 
 <style scoped>
 .container {
+  width: calc(100% - 64px);
   display: flex;
   padding: 32px;
-  align-items: start;
 }
 
 .left {
-  flex: 1;
+  width: 60%;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
 }
 
 .left div {
-  width: 8.4rem;
-  height: 8.4rem;
+  width: 100px;
+  height: 100px;
   margin: 10px;
   transition: all 0.4s;
   border: 1px solid #eee;
 }
 
 .showBox {
-  width: 40rem;
-  height: 30rem;
+  flex: 1;
+  height: 60vh;
   border: 1px solid #eee;
 }
 

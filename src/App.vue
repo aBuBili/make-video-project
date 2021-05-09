@@ -21,4 +21,8 @@ body {
   text-align: center;
   color: #2c3e50;
 }
+
+body html #root .App {
+  font-size: 62.5%;
+}
 </style>
