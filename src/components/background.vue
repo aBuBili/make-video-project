@@ -9,6 +9,7 @@
 
 <script setup>
 import { ref } from "@vue/reactivity";
+// const iphone = navigator.userAgent.match(/(Mac|iPhone|Android)/i);
 
 const styleList = [
   // 浅灰色
@@ -60,15 +61,14 @@ function setShowBoxClass({ target }) {
 .left {
   width: 60%;
   display: flex;
-  align-items: center;
   flex-wrap: wrap;
+  align-content: flex-start;
 }
 
 .left div {
   width: 100px;
   height: 100px;
   margin: 10px;
-  transition: all 0.4s;
   border: 1px solid #eee;
 }
 

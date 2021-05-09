@@ -2,16 +2,16 @@ import { createRouter, createWebHashHistory } from "vue-router";
 
 const routes = [
   {
-    path: "/",
-    redirct: "/tabbar",
-  },
-  {
     path: "/css-background",
     component: () => import("../views/cssBackground.vue"),
   },
   {
     path: "/tabbar",
     component: () => import("../views/tabbar.vue"),
+  },
+  {
+    path: "/",
+    redirect: "/tabbar",
   },
 ];
 
