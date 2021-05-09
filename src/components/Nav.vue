@@ -2,14 +2,19 @@
   <nav class="nav">
     <img src="../assets/avatar.png" alt="" class="avatar" />
 
-    <a href="https://space.bilibili.com/524406874" class="name">阿不不不_</a>
+    <span href="https://space.bilibili.com/524406874" class="name"
+      >阿不不不_</span
+    >
 
     <div class="LinkBox">
       <router-link to="/tabbar">TabBar</router-link>
       <router-link to="/css-background">CSS背景</router-link>
     </div>
-    
+
     <!-- 链接 -->
+    <a href="https://space.bilibili.com/524406874">
+      <img src="../assets/bilibili.png" alt="" class="github" />
+    </a>
     <a href="https://github.com/aBuBili/make-video-project">
       <img src="../assets/github.png" alt="" class="github" />
     </a>
@@ -54,8 +59,7 @@
 .name {
   font-size: 14px;
   font-weight: 600;
-  margin: 0px;
-  margin-right: 40px;
+  margin: 0 20px;
 }
 
 .github {
