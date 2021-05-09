@@ -15,7 +15,9 @@
 </template>
 
 <script setup>
-import { reactive, ref } from "vue";
+import { defineProps, reactive, ref } from "vue";
+const { navList } = defineProps();
+console.log(navList);
 
 const listArr = ["Vue", "React", "Home"];
 const activeIndex = ref(0);
@@ -35,7 +37,7 @@ function onHandleClick({ target }, index) {
 <style scoped>
 .container {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background-color: #e0eaf7;
   display: flex;
   justify-content: center;
@@ -70,7 +72,7 @@ function onHandleClick({ target }, index) {
   background-color: #598bf0;
   border-radius: 24px;
   left: var(--left);
-  transition: all 0.4s;
+  transition: left 0.4s;
   transition-timing-function: ease-in-out;
 }
 </style>

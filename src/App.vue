@@ -1,12 +1,10 @@
 <template>
-  <Background />
-  <!-- <newTabBar /> -->
+  <sidebar></sidebar>
+  <router-view />
 </template>
 
 <script setup>
-import Background from "./components/background.vue";
-// import newTabBar from "./components/newTabBar.vue";
-
+import sidebar from "./components/Nav.vue";
 // This starter template is using Vue 3 experimental <script setup> SFCs
 // Check out https://github.com/vuejs/rfcs/blob/script-setup-2/active-rfcs/0000-script-setup.md
 </script>

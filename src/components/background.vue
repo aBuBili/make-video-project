@@ -1,52 +1,77 @@
 <template>
   <div class="container">
-    <div class="gray coverBox"></div>
-    <div class="tianBox coverBox"></div>
-
-    <!-- 蓝色 -->
-    <div class="col-line coverBox"></div>
-    <div class="row-line coverBox"></div>
-    <div class="blue coverBox"></div>
-
-    <!-- 灰色格子 -->
-    <div class="grid coverBox"></div>
-    <div class="grid-double coverBox"></div>
-
-    <!-- 绿色 -->
-    <div class="line-rotate coverBox"></div>
-    <div class="line-rotate-left coverBox"></div>
-    <div class="line-rotate-left-right coverBox"></div>
-    <div class="xiaomai coverBox"></div>
-
-    <!-- 圆 -->
-    <div class="circle coverBox"></div>
-    <div class="pointReact coverBox"></div>
-
-    <!-- 砖墙 -->
-    <div class="reactBox coverBox"></div>
-
-    <!-- 奇奇怪怪的不知名形状 -->
-    <div class="hahaha coverBox"></div>
-    <div class="hahaha2 coverBox"></div>
-    <div class="hahaha3 coverBox"></div>
-    <div class="hahaha4 coverBox"></div>
+    <div class="left" @mouseover="setShowBoxClass">
+      <div v-for="(e, k) of styleList" :key="k" :class="e" :id="e"></div>
+    </div>
+    <div>
+      <div class="showBox"></div>
+      <code></code>
+    </div>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+const styleList = [
+  // 浅灰色
+  "gray",
+  "tianBox",
+  // 蓝色
+  "col-line",
+  "row-line",
+  "blue",
+  // 灰色格子
+  "grid",
+  "grid-double",
+  // 绿色
+  "line-rotate",
+  "line-rotate-left",
+  "line-rotate-left-right",
+  "xiaomai",
+  "circle",
+  "pointReact",
+  // 砖墙
+  "reactBox",
+  // 不知名形状
+  "hahaha",
+  "hahaha2",
+  "hahaha3",
+  "hahaha4",
+];
+function setShowBoxClass(e) {
+  console.log(e.target);
+}
+</script>
 
 <style scoped>
 .container {
   display: flex;
+  padding: 32px;
+  align-items: start;
+}
+
+.left {
+  flex: 1;
+  display: flex;
   align-items: center;
-  padding: 20px;
   flex-wrap: wrap;
 }
 
-.coverBox {
-  width: 170px;
-  height: 170px;
+.left div {
+  width: 8.4rem;
+  height: 8.4rem;
   margin: 10px;
+  transition: all 0.4s;
+  border: 1px solid #eee;
+}
+
+.showBox {
+  width: 40rem;
+  height: 30rem;
+  border: 1px solid #eee;
+  background-image: linear-gradient(90deg, #eee 1px, transparent 0),
+    linear-gradient(#efefef 1px, transparent 0);
+  background-size: 30px 30px;
+  background-repeat: repeat;
 }
 
 /* 灰色网格 */
@@ -59,9 +84,6 @@
 
 /* 田字格 */
 .tianBox {
-  width: 122px;
-  height: 122px;
-  margin-right: 58px;
   background-image: linear-gradient(90deg, #aaa 2px, transparent 0),
     linear-gradient(#aaa 2px, transparent 0),
     linear-gradient(90deg, #efefef 1px, transparent 1px),
