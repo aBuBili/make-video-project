@@ -38,6 +38,8 @@ const styleList = [
   "hahaha2",
   "hahaha3",
   "hahaha4",
+  // 图片
+  "image",
 ];
 
 let showStyleName = ref("gray");
@@ -207,8 +209,8 @@ function setShowBoxClass({ target }) {
 
 /* 辫子网格 */
 .bianzi {
-  background: linear-gradient(-45deg, #fbbd08 25%, transparent 0),
-    linear-gradient(45deg, #fbbd08 25%, transparent 0);
+  background: linear-gradient(-45deg, #8dc63f 25%, transparent 0),
+    linear-gradient(45deg, #8dc63f 25%, transparent 0);
   background-position: 0px 0px, 20px 0px;
   background-size: 40px 20px;
   background-repeat: repeat;
@@ -293,14 +295,19 @@ function setShowBoxClass({ target }) {
 
 /* 实心砖墙 */
 .reactBox {
-  background-image: linear-gradient(155deg, #515151 25%, transparent 0),
-    linear-gradient(-25deg, #515151 25%, transparent 0),
-    linear-gradient(155deg, #515151 25%, transparent 0),
-    linear-gradient(-25deg, #515151 25%, transparent 0);
+  background-image: linear-gradient(155deg, #f37b1d 25%, transparent 0),
+    linear-gradient(-25deg, #f37b1d 25%, transparent 0),
+    linear-gradient(155deg, #f37b1d 25%, transparent 0),
+    linear-gradient(-25deg, #f37b1d 25%, transparent 0);
   background-size: 64px 32px;
   background-position: 0 0, -32px -16px, 32px 16px, 0px 0px;
   background-repeat: repeat;
 }
 
 /* 线条砖墙 */
+.image {
+  background-image: url("../assets/avatar.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 </style>
