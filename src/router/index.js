@@ -10,6 +10,10 @@ const routes = [
     component: () => import("../views/tabbar.vue"),
   },
   {
+    path: "/jump",
+    component: () => import("../views/jump.vue"),
+  },
+  {
     path: "/",
     redirect: "/tabbar",
   },
