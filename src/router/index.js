@@ -10,8 +10,8 @@ const routes = [
     component: () => import("../views/tabbar.vue"),
   },
   {
-    path: "/jump",
-    component: () => import("../views/jump.vue"),
+    path: "/transform",
+    component: () => import("../views/transform3D/index.vue"),
   },
   {
     path: "/",
