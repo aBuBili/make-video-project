@@ -10,6 +10,7 @@
       <router-link to="/tabbar">TabBar</router-link>
       <router-link to="/css-background">CSS背景</router-link>
       <router-link to="/transform">跳一跳</router-link>
+      <router-link to="/music">music</router-link>
     </div>
 
     <!-- 链接 -->
