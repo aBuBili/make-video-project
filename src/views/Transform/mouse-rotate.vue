@@ -93,6 +93,8 @@ function getMouseLocal(e) {
   justify-content: center;
   align-items: center;
   background-color: #efefef;
+  width: 100%;
+  height: 100%;
 }
 
 .content {

@@ -3,19 +3,19 @@ import { createRouter, createWebHashHistory } from "vue-router"
 const routes = [
   {
     path: "/css-background",
-    component: () => import("../views/cssBackground.vue"),
+    component: () => import("../views/BackgroundImage/index.vue"),
   },
   {
     path: "/tabbar",
-    component: () => import("../views/tabbar.vue"),
+    component: () => import("../views/Tabbar/index.vue"),
   },
   {
     path: "/transform",
-    component: () => import("../views/transform3D/index.vue"),
+    component: () => import("../views/Transform/index.vue"),
   },
   {
     path: "/music",
-    component: () => import("../views/music.vue"),
+    component: () => import("../views/Audio/index.vue"),
   },
   {
     path: "/",

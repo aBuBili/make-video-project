@@ -3,7 +3,7 @@
     <div class="music" :style="{ '--rotate': rotateY }">
       <div class="before">
         <img
-          src="../assets/music/songIcon.png"
+          src="../../assets/music/songIcon.png"
           alt=""
           class="songIcon"
           @click="rotateY = -180 + 'deg'"
@@ -27,7 +27,7 @@
       </div>
       <div class="after">
         <img
-          src="../assets/music/back.png"
+          src="../../assets/music/back.png"
           alt=""
           class="backIcon"
           @click="rotateY = 0 + 'deg'"

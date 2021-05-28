@@ -1,6 +1,6 @@
 <template>
-  <sidebar></sidebar>
-  <router-view />
+  <SideBar></SideBar>
+  <router-view class="router-view-style" />
   <footer class="footer">
     <a href="https://beian.miit.gov.cn/" target="_blank"
       >京ICP备 2021003164 号</a
@@ -9,7 +9,7 @@
 </template>
 
 <script setup>
-import sidebar from "./components/Nav.vue"
+import SideBar from "./components/Nav.vue"
 // This starter template is using Vue 3 experimental <script setup> SFCs
 // Check out https://github.com/vuejs/rfcs/blob/script-setup-2/active-rfcs/0000-script-setup.md
 </script>
@@ -28,6 +28,10 @@ p {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+
+.router-view-style {
+  min-height: calc(100vh - 120px);
 }
 
 .footer {
