@@ -3,12 +3,12 @@
 </template>
 
 <script setup>
-import MouseRotate from "./mouse-rotate.vue"
+import MouseRotate from "./mouse-rotate.vue";
 </script>
 
 <style scoped>
 .mouse {
-  width: 50%;
-  height: 80%;
+  width: 100%;
+  height: 100%;
 }
 </style>

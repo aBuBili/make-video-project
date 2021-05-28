@@ -52,38 +52,38 @@
 </template>
 
 <script setup>
-import { reactive, ref } from "@vue/reactivity"
-import { onMounted } from "@vue/runtime-core"
+import { reactive, ref } from "@vue/reactivity";
+import { onMounted } from "@vue/runtime-core";
 
-const size = reactive({ width: 0, height: 0 })
-const containerRef = ref(null)
+const size = reactive({ width: 0, height: 0 });
+const containerRef = ref(null);
 
 // 获取 鼠标交互部分的范围
 onMounted(() => {
-  const { width, height } = containerRef.value.getBoundingClientRect()
-  size.width = width
-  size.height = height
-})
+  const { width, height } = containerRef.value.getBoundingClientRect();
+  size.width = width;
+  size.height = height;
+});
 
 // 鼠标坐标
-const mx = ref(0)
-const my = ref(0)
+const mx = ref(0);
+const my = ref(0);
 
 // rotate 参数
-const rx = ref(0)
-const ry = ref(0)
+const rx = ref(0);
+const ry = ref(0);
 
 // 鼠标移动时执行
 function getMouseLocal(e) {
-  const { width, height } = size //有效区域大小
-  const { x, y } = e //鼠标位置
-  const degR = 16 //摆动幅度
+  const { width, height } = size; //有效区域大小
+  const { x, y } = e; //鼠标位置
+  const degR = 16; //摆动幅度
 
-  ry.value = ((x / (width / (degR * 20))) * 0.1 - degR).toFixed(1) + "deg"
-  rx.value = (degR - (y / (height / (degR * 20))) * 0.1).toFixed(1) + "deg"
+  ry.value = ((x / (width / (degR * 20))) * 0.1 - degR).toFixed(1) + "deg";
+  rx.value = (degR - (y / (height / (degR * 20))) * 0.1).toFixed(1) + "deg";
 
-  mx.value = x
-  my.value = y
+  mx.value = x;
+  my.value = y;
 }
 </script>
 
