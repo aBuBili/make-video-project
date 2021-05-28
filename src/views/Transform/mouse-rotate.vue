@@ -7,45 +7,48 @@
       <div class="lock"></div>
     </div>
     <div class="panel">
-      <div>
-        <p>有效区域大小： {{ size.width + "px" }} * {{ size.height + "px" }}</p>
-        <p>鼠标坐标: {{ mx }} * {{ my }}</p>
-        <p>旋转角度: {{ rx }} * {{ ry }}</p>
+      <div v-show="showPanel">
+        <div>
+          <h5>实时参数</h5>
+          <p>
+            有效区域大小： {{ size.width + "px" }} * {{ size.height + "px" }}
+          </p>
+          <p>鼠标坐标: {{ mx }} * {{ my }}</p>
+          <p>旋转角度: {{ rx }} * {{ ry }}</p>
+        </div>
+        <div>
+          <h5>实现步骤：</h5>
+          <p>0.将展示的基础元素画好</p>
+          <p>
+            1.将最外面元素转换为3D：
+            <code lang="javascript">transform-style: preserve-3d;</code>
+          </p>
+          <p>
+            2.将色块像Z轴偏移40px：
+            <code lang="javascript"> transform: translateZ(40px); </code>
+          </p>
+          <p>
+            3.通过控制3D元素旋转的角度
+            <code lang="javascript">
+              transform: rotateX( 8deg ) rotateY( 8deg );
+            </code>
+            实现视觉效果
+          </p>
+          <p>4.通过mousemove获取鼠标x、y坐标，再计算出3D元素的旋转角度 rx、ry</p>
+          <p>
+            5.style将角度传递给css
+            <code lang="javascript"> :style="{ '--rx': rx, '--ry': ry }" </code>
+          </p>
+          <p>
+            6.在css中获取
+            <code lang="javascript">
+              transform: rotateX(var(--rx)) rotateY(var(--ry));
+            </code>
+          </p>
+        </div>
       </div>
-      <div>
-        <p>实现步骤：</p>
-        <p>0.将展示的基础元素画好</p>
-        <p>
-          1.将最外面元素转换为3D：
-          <code lang="javascript">transform-style: preserve-3d;</code>
-        </p>
-        <p>
-          2.将色块像Z轴偏移40px：
-          <code lang="javascript"> transform: translateZ(40px); </code>
-        </p>
-        <p>
-          3.通过控制3D元素旋转的角度
-          <code lang="javascript">
-            transform: rotateX( 8deg ) rotateY( 8deg );
-          </code>
-          实现视觉效果
-        </p>
-        <p>
-          4.通过mousemove获取鼠标x、y坐标，再计算出3D元素的旋转角度
-          <code lang="javascript">
-            transform: rotateX( 8deg ) rotateY( 8deg );
-          </code>
-        </p>
-        <p>
-          5.style将角度传递给css
-          <code lang="javascript"> :style="{ '--rx': rx, '--ry': ry }" </code>
-        </p>
-        <p>
-          6.在css中获取
-          <code lang="javascript">
-            transform: rotateX(var(--rx)) rotateY(var(--ry));
-          </code>
-        </p>
+      <div @click="showPanel = !showPanel" class="controlPanel">
+        {{ showPanel ? "隐藏面板" : "显示面板" }}
       </div>
     </div>
   </div>
@@ -57,6 +60,7 @@ import { onMounted } from "@vue/runtime-core";
 
 const size = reactive({ width: 0, height: 0 });
 const containerRef = ref(null);
+const showPanel = ref(false);
 
 // 获取 鼠标交互部分的范围
 onMounted(() => {
@@ -158,5 +162,11 @@ function getMouseLocal(e) {
 
 .panel div {
   padding: 0 20px;
+}
+
+.controlPanel {
+  color: #86a8e7;
+  cursor: pointer;
+  margin: 20px;
 }
 </style>
