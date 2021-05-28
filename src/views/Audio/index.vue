@@ -15,7 +15,7 @@
             class="item"
             @click="onClickSong(e, index)"
           >
-            <div class="playing" v-if="index == playingIndex"></div>
+            <PlayingJump v-if="index == playingIndex"></PlayingJump>
             <span class="index" v-else>{{ index + 1 }}</span>
             <img :src="e.cover" alt="" class="coverImg" />
             <div class="info">
@@ -41,7 +41,8 @@
   </div>
 </template>
 <script setup>
-import { ref } from "@vue/reactivity"
+import { ref } from "@vue/reactivity";
+import PlayingJump from "../Animation/two-table-jump.vue";
 
 const musicData = [
   {
@@ -74,16 +75,16 @@ const musicData = [
     title: "阿不不不",
     author: "阿不 - 大脸猫",
   },
-]
+];
 
-const playingIndex = ref(0)
-const playingItemObject = ref(musicData[0])
+const playingIndex = ref(0);
+const playingItemObject = ref(musicData[0]);
 
-const rotateY = ref(0)
+const rotateY = ref(0);
 
 function onClickSong(item, index) {
-  playingItemObject.value = item
-  playingIndex.value = index
+  playingItemObject.value = item;
+  playingIndex.value = index;
 }
 </script>
 
@@ -193,45 +194,6 @@ img {
   height: 50px;
   border-radius: 10px;
   margin: 0 20px;
-}
-
-.playing {
-  position: relative;
-  display: flex;
-  align-items: center;
-  width: 40px;
-
-  @mixin baseCyl() {
-    position: absolute;
-    width: 4px;
-    height: 16px;
-    background-color: #db4865;
-    border-radius: 4px;
-    animation: change 0.2s infinite alternate;
-  }
-
-  &::before {
-    @include baseCyl();
-    content: "";
-    left: 22px;
-  }
-
-  &::after {
-    @include baseCyl();
-    content: "";
-    left: 14px;
-    animation-delay: 0.2s;
-  }
-
-  @keyframes change {
-    0% {
-      height: 16px;
-    }
-
-    100% {
-      height: 6px;
-    }
-  }
 }
 
 .bigCover {

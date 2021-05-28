@@ -17,11 +17,11 @@ import { reactive, ref } from "vue";
 }
 
 .playing {
-  width: 60px;
+  width: 40px;
   display: flex;
   align-items: center;
   position: relative;
-  @include baseCyl();
+  /* @include baseCyl(); */
 
   &::before {
     @include baseCyl();
@@ -32,7 +32,7 @@ import { reactive, ref } from "vue";
   &::after {
     @include baseCyl();
     content: "";
-    left: 11px;
+    left: 12px;
     animation-delay: 0.2s;
   }
 
