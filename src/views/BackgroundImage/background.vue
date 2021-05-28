@@ -8,7 +8,7 @@
 </template>
 
 <script setup>
-import { ref } from "@vue/reactivity";
+import { ref } from "@vue/reactivity"
 // const iphone = navigator.userAgent.match(/(Mac|iPhone|Android)/i);
 
 const styleList = [
@@ -40,15 +40,15 @@ const styleList = [
   "hahaha4",
   // 图片
   "image",
-];
+]
 
-let showStyleName = ref("gray");
+let showStyleName = ref("gray")
 
 function setShowBoxClass({ target }) {
-  const { id } = target;
+  const { id } = target
   if (id) {
-    showStyleName.value = id;
-    console.log(id);
+    showStyleName.value = id
+    console.log(id)
   }
 }
 </script>
@@ -57,7 +57,8 @@ function setShowBoxClass({ target }) {
 .container {
   width: calc(100% - 64px);
   display: flex;
-  padding: 32px;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .left {
@@ -304,9 +305,9 @@ function setShowBoxClass({ target }) {
   background-repeat: repeat;
 }
 
-/* 线条砖墙 */
+/* 阿不头像 */
 .image {
-  background-image: url("../assets/avatar.png");
+  background-image: url("../../assets/avatar.png");
   background-size: cover;
   background-repeat: no-repeat;
 }

@@ -43,8 +43,6 @@ function onHandleClick({ target }, index) {
 
 <style scoped>
 .container {
-  width: 100%;
-  height: 100%;
   background-color: #e0eaf7;
   display: flex;
   justify-content: center;

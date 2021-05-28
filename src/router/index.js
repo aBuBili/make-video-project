@@ -2,12 +2,24 @@ import { createRouter, createWebHashHistory } from "vue-router";
 
 const routes = [
   {
-    path: "/css-background",
-    component: () => import("../views/cssBackground.vue"),
+    path: "/tabbar",
+    component: () => import("../views/Tabbar/index.vue"),
   },
   {
-    path: "/tabbar",
-    component: () => import("../views/tabbar.vue"),
+    path: "/css-background",
+    component: () => import("../views/BackgroundImage/index.vue"),
+  },
+  {
+    path: "/transform",
+    component: () => import("../views/Transform/index.vue"),
+  },
+  {
+    path: "/animation",
+    component: () => import("../views/Animation/index.vue"),
+  },
+  {
+    path: "/music",
+    component: () => import("../views/Audio/index.vue"),
   },
   {
     path: "/",
