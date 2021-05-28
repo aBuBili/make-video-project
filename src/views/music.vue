@@ -88,6 +88,11 @@ function onClickSong(item, index) {
 </script>
 
 <style lang="scss" scoped>
+/* 图片禁止拖拽 */
+img {
+  -webkit-user-drag: none;
+}
+
 .container {
   background-color: #fdf4f7;
   height: calc(100vh - 120px);
