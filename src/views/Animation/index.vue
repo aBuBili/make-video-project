@@ -1,18 +1,22 @@
 <template>
   <div class="animationItem">
     <div class="pink">
-      <TwoTableJump></TwoTableJump>
+      <TwoBoxJump></TwoBoxJump>
     </div>
     <div class="green">
       <GreenPoint></GreenPoint>
+    </div>
+    <div class="gray">
+      <Arrow></Arrow>
     </div>
   </div>
 </template>
 
 <script setup>
-import { reactive, ref } from "vue";
-import TwoTableJump from "./two-table-jump.vue";
-import GreenPoint from "./green-radial-point.vue";
+import { reactive, ref } from "vue"
+import TwoBoxJump from "./two-box-jump.vue"
+import GreenPoint from "./green-radial-point.vue"
+import Arrow from "./arrow.vue"
 </script>
 
 <style lang="scss" scoped>
@@ -37,5 +41,10 @@ import GreenPoint from "./green-radial-point.vue";
 .green {
   @include item();
   background-color: #39b54a1a;
+}
+
+.gray {
+  @include item();
+  background-color: #9999991a;
 }
 </style>
