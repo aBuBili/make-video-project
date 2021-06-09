@@ -8,9 +8,9 @@
     </div>
 
     <div class="panel">
-      <div v-if="showPanel">
+      <div v-show="showPanel">
         <div>
-          <h5>实时参数：</h5>
+          <h5>实时参数</h5>
           <p>
             有效区域大小： {{ size.width + "px" }} * {{ size.height + "px" }}
           </p>
@@ -35,7 +35,7 @@
             </code>
             实现视觉效果
           </p>
-          <p>4.通过mousemove获取鼠标x、y坐标，再计算出3D元素的旋转角度rx ry</p>
+          <p>4.通过mousemove获取鼠标x、y坐标，再计算出3D元素的旋转角度 rx、ry</p>
           <p>
             5.style将角度传递给css
             <code lang="javascript"> :style="{ '--rx': rx, '--ry': ry }" </code>
@@ -48,47 +48,47 @@
           </p>
         </div>
       </div>
-      <div @click="showPanel = !showPanel" class="panelToogle">
-        {{ showPanel ? "隐藏步骤" : "显示步骤" }}
+      <div @click="showPanel = !showPanel" class="controlPanel">
+        {{ showPanel ? "隐藏面板" : "显示面板" }}
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import { reactive, ref } from "@vue/reactivity"
-import { onMounted } from "@vue/runtime-core"
+import { reactive, ref } from "@vue/reactivity";
+import { onMounted } from "@vue/runtime-core";
 
-const size = reactive({ width: 0, height: 0 })
-const containerRef = ref(null)
-const showPanel = ref(false)
+const size = reactive({ width: 0, height: 0 });
+const containerRef = ref(null);
+const showPanel = ref(false);
 
 // 获取 鼠标交互部分的范围
 onMounted(() => {
-  const { width, height } = containerRef.value.getBoundingClientRect()
-  size.width = width
-  size.height = height
-})
+  const { width, height } = containerRef.value.getBoundingClientRect();
+  size.width = width;
+  size.height = height;
+});
 
 // 鼠标坐标
-const mx = ref(0)
-const my = ref(0)
+const mx = ref(0);
+const my = ref(0);
 
 // rotate 参数
-const rx = ref(0)
-const ry = ref(0)
+const rx = ref(0);
+const ry = ref(0);
 
 // 鼠标移动时执行
 function getMouseLocal(e) {
-  const { width, height } = size //有效区域大小
-  const { x, y } = e //鼠标位置
-  const degR = 16 //摆动幅度
+  const { width, height } = size; //有效区域大小
+  const { x, y } = e; //鼠标位置
+  const degR = 16; //摆动幅度
 
-  ry.value = ((x / (width / (degR * 20))) * 0.1 - degR).toFixed(1) + "deg"
-  rx.value = (degR - (y / (height / (degR * 20))) * 0.1).toFixed(1) + "deg"
+  ry.value = ((x / (width / (degR * 20))) * 0.1 - degR).toFixed(1) + "deg";
+  rx.value = (degR - (y / (height / (degR * 20))) * 0.1).toFixed(1) + "deg";
 
-  mx.value = x
-  my.value = y
+  mx.value = x;
+  my.value = y;
 }
 </script>
 
@@ -167,5 +167,11 @@ function getMouseLocal(e) {
 
 .panel div {
   padding: 0 20px;
+}
+
+.controlPanel {
+  color: #86a8e7;
+  cursor: pointer;
+  margin: 20px;
 }
 </style>

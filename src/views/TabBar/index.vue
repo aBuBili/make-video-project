@@ -5,7 +5,7 @@
 <script setup>
 import SlideTab from "./slide-tab.vue"
 
-const navList = ["Vue", "React", "Home", "I'm very happy!"]
+const navList = ["Vue", "React", "Home", "I'm very happy!"];
 </script>
 
 <style scoped></style>

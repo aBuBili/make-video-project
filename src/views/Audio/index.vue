@@ -15,7 +15,7 @@
             class="item"
             @click="onClickSong(e, index)"
           >
-            <TwoBoxJump v-if="index == playingIndex" />
+            <PlayingJump v-if="index == playingIndex"></PlayingJump>
             <span class="index" v-else>{{ index + 1 }}</span>
             <img :src="e.cover" alt="" class="coverImg" />
             <div class="info">
@@ -41,8 +41,8 @@
   </div>
 </template>
 <script setup>
-import { ref } from "@vue/reactivity"
-import TwoBoxJump from "../Animation/two-box-jump.vue"
+import { ref } from "@vue/reactivity";
+import PlayingJump from "../Animation/two-table-jump.vue";
 
 const musicData = [
   {
@@ -75,16 +75,16 @@ const musicData = [
     title: "阿不不不",
     author: "阿不 - 大脸猫",
   },
-]
+];
 
-const playingIndex = ref(0)
-const playingItemObject = ref(musicData[0])
+const playingIndex = ref(0);
+const playingItemObject = ref(musicData[0]);
 
-const rotateY = ref(0)
+const rotateY = ref(0);
 
 function onClickSong(item, index) {
-  playingItemObject.value = item
-  playingIndex.value = index
+  playingItemObject.value = item;
+  playingIndex.value = index;
 }
 </script>
 
