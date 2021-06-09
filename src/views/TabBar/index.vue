@@ -1,9 +1,9 @@
 <template>
-  <div class="sideBarContainer"><slideTab :navList="navList"></slideTab></div>
+  <SlideTab :navList="navList"></SlideTab>
 </template>
 
 <script setup>
-import slideTab from "./slideTab.vue"
+import SlideTab from "./slide-tab.vue"
 
 const navList = ["Vue", "React", "Home", "I'm very happy!"]
 </script>

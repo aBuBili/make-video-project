@@ -15,7 +15,7 @@
             class="item"
             @click="onClickSong(e, index)"
           >
-            <div class="playing" v-if="index == playingIndex"></div>
+            <TwoBoxJump v-if="index == playingIndex" />
             <span class="index" v-else>{{ index + 1 }}</span>
             <img :src="e.cover" alt="" class="coverImg" />
             <div class="info">
@@ -42,6 +42,7 @@
 </template>
 <script setup>
 import { ref } from "@vue/reactivity"
+import TwoBoxJump from "../Animation/two-box-jump.vue"
 
 const musicData = [
   {
@@ -95,7 +96,6 @@ img {
 
 .container {
   background-color: #fdf4f7;
-  height: calc(100vh - 120px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -193,45 +193,6 @@ img {
   height: 50px;
   border-radius: 10px;
   margin: 0 20px;
-}
-
-.playing {
-  position: relative;
-  display: flex;
-  align-items: center;
-  width: 40px;
-
-  @mixin baseCyl() {
-    position: absolute;
-    width: 4px;
-    height: 16px;
-    background-color: #db4865;
-    border-radius: 4px;
-    animation: change 0.2s infinite alternate;
-  }
-
-  &::before {
-    @include baseCyl();
-    content: "";
-    left: 22px;
-  }
-
-  &::after {
-    @include baseCyl();
-    content: "";
-    left: 14px;
-    animation-delay: 0.2s;
-  }
-
-  @keyframes change {
-    0% {
-      height: 16px;
-    }
-
-    100% {
-      height: 6px;
-    }
-  }
 }
 
 .bigCover {

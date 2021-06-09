@@ -18,6 +18,10 @@ const routes = [
     component: () => import("../views/Audio/index.vue"),
   },
   {
+    path: "/animation",
+    component: () => import("../views/Animation/index.vue"),
+  },
+  {
     path: "/",
     redirect: "/tabbar",
   },
