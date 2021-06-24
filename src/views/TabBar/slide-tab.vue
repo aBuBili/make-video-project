@@ -1,9 +1,6 @@
 <template>
   <div class="container">
-    <div
-      class="tabbar"
-      :style="{ '--leftRef': leftRef, '--widthRef': widthRef }"
-    >
+    <div class="tabbar">
       <p
         class="item"
         v-for="(e, k) of navList"
@@ -32,11 +29,9 @@ const leftRef = ref(0);
 const widthRef = ref("70px");
 
 function onHandleClick({ target }, index) {
-  const { width, left } = target.getBoundingClientRect(); //当前元素获取width 和 left
-  const { left: parentleftRef } = target.parentNode.getBoundingClientRect(); //父级元素获取left
-
-  leftRef.value = left - 4 - parentleftRef + "px"; //计算滑块应该在的距离
-  widthRef.value = width + "px"; //计算滑块宽度
+// 根据评论区 “shenyun666” 进行更改 lef offsetLeft可以获取距离左边的偏移量 offsetWidth可以更改滑块的宽度
+  leftRef.value = target.offsetLeft + "px"; //计算滑块应该在的距离
+  widthRef.value = target.offsetWidth + "px"; //计算滑块宽度
   activeIndex.value = index; //设置 active item
 }
 </script>
@@ -72,15 +67,16 @@ function onHandleClick({ target }, index) {
 }
 
 /* 伪元素 滑块 */
+/* 根据评论区 “shenyun666” 进行更改 v-bind语发糖可以直接关联样式值  */
+/* 根据评论区 “_月无情” 进行更改 lef 更改为translateX 更高效 */
 .tabbar::before {
   position: absolute;
   content: "";
-  width: var(--widthRef);
+  width: v-bind(widthRef);
   height: 100%;
   background-color: #598bf0;
   border-radius: 24px;
-  /* 根据评论区 “_月无情” 进行更改 lef 更改为translateX 更高效 */
-  transform: translateX(var(--leftRef));
+  transform: translateX(v-bind(leftRef));
   transition: 0.2s;
   transition-timing-function: ease-in-out;
 }

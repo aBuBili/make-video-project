@@ -1,5 +1,5 @@
 <template>
-  <SlideTab :navList="navList"></SlideTab>
+    <SlideTab :navList="navList"></SlideTab>
 </template>
 
 <script setup>
@@ -9,3 +9,4 @@ const navList = ["Vue", "React", "Home", "I'm very happy!"];
 </script>
 
 <style scoped></style>
+ 

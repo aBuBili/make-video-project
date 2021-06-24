@@ -42,7 +42,7 @@
 </template>
 <script setup>
 import { ref } from "@vue/reactivity";
-import PlayingJump from "../Animation/two-table-jump.vue";
+import PlayingJump from "../Animation/two-box-jump.vue"
 
 const musicData = [
   {

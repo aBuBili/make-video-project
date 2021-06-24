@@ -3,7 +3,7 @@ import { createRouter, createWebHashHistory } from "vue-router";
 const routes = [
   {
     path: "/tabbar",
-    component: () => import("../views/Tabbar/index.vue"),
+    component: () => import("../views/TabBar/index.vue"),
   },
   {
     path: "/css-background",
