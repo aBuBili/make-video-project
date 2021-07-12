@@ -6,6 +6,7 @@
       <div class="card">**** **** **** 2148</div>
       <div class="lock"></div>
     </div>
+    <!-- 步骤 -->
     <div class="panel">
       <div v-show="showPanel">
         <div>
@@ -34,7 +35,9 @@
             </code>
             实现视觉效果
           </p>
-          <p>4.通过mousemove获取鼠标x、y坐标，再计算出3D元素的旋转角度 rx、ry</p>
+          <p>
+            4.通过mousemove获取鼠标x、y坐标，再计算出3D元素的旋转角度 rx、ry
+          </p>
           <p>
             5.style将角度传递给css
             <code lang="javascript"> :style="{ '--rx': rx, '--ry': ry }" </code>
@@ -58,9 +61,9 @@
 import { reactive, ref } from "@vue/reactivity";
 import { onMounted } from "@vue/runtime-core";
 
-const size = reactive({ width: 0, height: 0 });
-const containerRef = ref(null);
-const showPanel = ref(false);
+const size = reactive({ width: 0, height: 0 }); //鼠标交互有效区域大小
+const containerRef = ref(null); // 有效区域dom节点的ref
+const showPanel = ref(false); //是否显示步骤说明
 
 // 获取 鼠标交互部分的范围
 onMounted(() => {
@@ -83,8 +86,8 @@ function getMouseLocal(e) {
   const { x, y } = e; //鼠标位置
   const degR = 16; //摆动幅度
 
-  ry.value = ((x / (width / (degR * 20))) * 0.1 - degR).toFixed(1) + "deg";
-  rx.value = (degR - (y / (height / (degR * 20))) * 0.1).toFixed(1) + "deg";
+  ry.value = (x / (width / (degR * 2)) - degR).toFixed(1) + "deg";
+  rx.value = (degR - y / (height / (degR * 2))).toFixed(1) + "deg";
 
   mx.value = x;
   my.value = y;
