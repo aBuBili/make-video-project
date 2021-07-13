@@ -9,6 +9,9 @@
     <div class="gray">
       <Arrow></Arrow>
     </div>
+    <div>
+      <ImgToGif></ImgToGif>
+    </div>
   </div>
 </template>
 
@@ -17,6 +20,7 @@ import { reactive, ref } from "vue"
 import TwoBoxJump from "./two-box-jump.vue"
 import GreenPoint from "./green-radial-point.vue"
 import Arrow from "./arrow.vue"
+import ImgToGif from "./img-to-gif.vue"
 </script>
 
 <style lang="scss" scoped>
