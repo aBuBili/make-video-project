@@ -7,11 +7,12 @@
     >
 
     <div class="LinkBox">
-      <router-link to="/tabbar">tabbar</router-link>
-      <router-link to="/css-background">background-image</router-link>
-      <router-link to="/transform">transform</router-link>
-      <router-link to="/animation">animation</router-link>
-      <router-link to="/music">audio</router-link>
+      <router-link to="/tabbar">Tabbar</router-link>
+      <router-link to="/css-background">Background</router-link>
+      <router-link to="/transform">Transform</router-link>
+      <router-link to="/animation">Animation</router-link>
+      <router-link to="/music">Flip</router-link>
+      <router-link to="/bill">Bill</router-link>
     </div>
 
     <!-- 链接 -->

@@ -63,18 +63,6 @@ const musicData = [
     title: "水手公园",
     author: "GALA - 追梦痴子心",
   },
-  {
-    id: "music1",
-    cover: "https://avatars.githubusercontent.com/u/70617237?v=4",
-    title: "阿不不不",
-    author: "阿不 - 大脸猫",
-  },
-  {
-    id: "music1",
-    cover: "https://avatars.githubusercontent.com/u/70617237?v=4",
-    title: "阿不不不",
-    author: "阿不 - 大脸猫",
-  },
 ];
 
 const playingIndex = ref(0);
@@ -105,7 +93,7 @@ img {
 
 .music {
   width: 350px;
-  height: 560px;
+  height: 380px;
   position: relative;
 
   transform-style: preserve-3d;
@@ -116,7 +104,7 @@ img {
 @mixin base() {
   background-color: #fff;
   width: 350px;
-  height: 560px;
+  height: 380px;
   padding: 0 14px;
   border-radius: 37px;
   position: absolute;

@@ -22,6 +22,10 @@ const routes = [
     component: () => import("../views/Audio/index.vue"),
   },
   {
+    path: "/bill",
+    component: () => import("../views/Bill/index.vue"),
+  },
+  {
     path: "/",
     redirect: "/tabbar",
   },
